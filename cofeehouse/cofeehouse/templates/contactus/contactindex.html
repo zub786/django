@@ -1,0 +1,90 @@
+
+{% extends 'shared/adminLayout.html' %}
+
+{% block content %}
+
+<h2>Received Contacts</h2>
+<div class="row">
+  <div class="col-md-12">
+
+   <a class="btn btn-primary" href="/contact/contactus">Register New</a>
+  </div>
+</div>
+
+
+<div class="row">
+<div class="col-md-12">
+
+<table id="index">
+     <thead>
+
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+         <th>
+            City
+        </th>
+         <th>
+            State
+        </th>
+         <th>
+            Address
+        </th>
+         <th>
+            Email
+        </th>
+         <th>
+            Comments
+        </th>
+     <th>
+         Action
+     </th>
+    </thead>
+
+    <tbody>
+      {% for item in contacts  %}
+
+    <tr>
+
+        <td>
+            {{item.id}}
+        </td>
+        <td>
+            {{item.name}}
+        </td>
+        <td>
+            {{item.city}}
+        </td>
+        <td>
+            {{item.state}}
+        </td>
+        <td>
+            {{item.address}}
+        </td>
+        <td>
+            {{item.email}}
+        </td>
+          <td>
+            {{item.comment}}
+        </td>
+        <td>
+            <a href="/contact/edit/{{item.id}}">Edit</a> | <a  href="/contact/details/{{item.id}}">View</a> | <a  href="/contact/delete/{{item.id}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor  %}
+    </tbody>
+
+
+</table>
+</div>
+
+</div>
+
+<script>
+    $("#index").DataTable();
+</script>
+{% endblock %}
+

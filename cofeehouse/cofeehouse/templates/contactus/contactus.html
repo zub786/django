@@ -1,0 +1,21 @@
+
+{% extends 'shared/adminLayout.html' %}
+
+{% block content %}
+<a class="btn btn-primary" href="/contact/index">View All</a>
+<hr>
+<h2>Fill your details</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <table>
+    {{form.as_table}}
+  </table>
+  <input type="submit" value="Submit form">
+
+</form>
+{% endblock %}
+
+   <a class="btn btn-primary" href="/contact/index">View All</a>
+   <a class="btn btn-primary" href="/contact/contactus">Register New</a>

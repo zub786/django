@@ -1,0 +1,11 @@
+
+{% extends 'shared/base.html' %}
+
+
+{% block content %}
+<body>
+
+<h3> About </h3>
+
+</body>
+{% endblock %}
